@@ -210,6 +210,8 @@ elseif ($op -eq 0) {
             }
             else {
                 # Perform some action with the valid input values
+                $isOn = Change-Dns 4 $ip1 $ip2
+
                 if ($isOn) {
                     Change-Dns 3 $ip1 $ip2
                 }
@@ -217,7 +219,7 @@ elseif ($op -eq 0) {
                     Change-Dns 2 $ip1 $ip2
                 }
 
-                $isOn = Change-Dns 4 $DNS1 $DNS2
+                $isOn = Change-Dns 4 $ip1 $ip2
 
                 if ($isOn) {
                     $button.BackColor = [System.Drawing.Color]::LightGreen
